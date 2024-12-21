@@ -1,0 +1,249 @@
+/* styles.css */
+:root {
+    --primary-color: #2196F3;
+    --secondary-color: #1976D2;
+    --success-color: #4CAF50;
+    --error-color: #f44336;
+    --text-color: #333;
+    --bg-color: #f5f5f5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: var(--bg-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    margin: 20px auto;
+}
+
+.search-box {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.school-logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+h1 {
+    color: var(--text-color);
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input {
+    flex: 1;
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+}
+
+button {
+    padding: 15px 40px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+button:hover {
+    background: var(--secondary-color);
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+.message {
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    display: none;
+}
+
+.message.success {
+    background: #E8F5E9;
+    color: var(--success-color);
+    border: 1px solid #C8E6C9;
+    display: block;
+}
+
+.message.error {
+    background: #FFEBEE;
+    color: var(--error-color);
+    border: 1px solid #FFCDD2;
+    display: block;
+}
+
+.instructions {
+    margin-top: 30px;
+    padding: 20px;
+    background: #F5F5F5;
+    border-radius: 8px;
+}
+
+.instructions h3 {
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.instructions ul {
+    list-style-type: none;
+}
+
+.instructions li {
+    margin: 10px 0;
+    color: #666;
+    position: relative;
+    padding-right: 20px;
+}
+
+.instructions li:before {
+    content: "•";
+    color: var(--primary-color);
+    position: absolute;
+    right: 0;
+}
+
+.loading-spinner {
+    display: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ffffff;
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+footer {
+    margin-top: auto;
+    padding: 20px;
+    text-align: center;
+    color: #666;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .search-box {
+        padding: 20px;
+    }
+    
+    .input-group {
+        flex-direction: column;
+    }
+    
+    button {
+        width: 100%;
+    }
+}
+
+
+/* إضافة هذه الأنماط إلى ملف styles.css السابق */
+
+.result-container {
+    margin-top: 20px;
+    min-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container {
+    max-width: 100%;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.image-container.loaded {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.result-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.error-message {
+    color: #f44336;
+    background: #FFEBEE;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    margin: 10px 0;
+    border: 1px solid #FFCDD2;
+}
+
+@media (max-width: 480px) {
+    .result-image {
+        max-width: 100%;
+    }
+}

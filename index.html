@@ -1,0 +1,50 @@
+<!-- index.php -->
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الدرجات وإستمارة التقييم</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="search-box">
+            <div class="logo">
+                <img src="logo.png" alt="شعار المدرسة" class="school-logo">
+            </div>
+            <h1> الدرجات و إستمارة التقييم </h1>
+            <p class="subtitle">أدخل الكود الخاص بك لعرض النتيجة</p>
+            
+            <form action="search.php" method="POST" id="searchForm">
+                <div class="input-group">
+                    <input type="text" 
+                           name="studentCode" 
+                           id="studentCode"
+                           placeholder="أدخل الكود الخاص بك"
+                           pattern="[0-9]{5,10}"
+                           title="يجب أن يحتوي الكود على 5-10 أرقام فقط"
+                           required>
+                    <button type="submit">
+                        <span class="button-text">بحث</span>
+                        <span class="loading-spinner"></span>
+                    </button>
+                </div>
+            </form>
+
+            <div id="result" class="result-container"></div>
+
+            <div class="instructions">
+                <h3>تعليمات:</h3>
+                <ul>
+
+                    <li>تأكد من إدخال الكود الصحيح .</li>
+                    <li>في حالة وجود مشكلة، يرجى التواصل مع إدارة الموقع .</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
